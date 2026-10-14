@@ -7,9 +7,10 @@ if TYPE_CHECKING:
 
 
 class CinemaHall:
-    def __init__(self, number: int) -> None:
-        self.number = number
-        self.hall_number = number
+    def __init__(self, number: int = None, hall_number: int = None) -> None:
+        resolved_number = number if number is not None else hall_number
+        self.number = resolved_number
+        self.hall_number = resolved_number
 
     def movie_session(
         self,
