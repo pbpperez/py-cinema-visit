@@ -7,10 +7,9 @@ if TYPE_CHECKING:
 
 
 class CinemaHall:
-    def __init__(self, hall_number: int = 0, number: int = 0) -> None:
-        # Usa el que se proporcione (hall_number o number)
-        self.number = hall_number if hall_number != 0 else number
-        self.hall_number = self.number
+    def __init__(self, number: int) -> None:
+        self.number = number
+        self.hall_number = number
 
     def movie_session(
         self,
