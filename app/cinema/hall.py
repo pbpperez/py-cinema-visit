@@ -7,8 +7,11 @@ if TYPE_CHECKING:
 
 
 class CinemaHall:
-    def __init__(self, hall_number: int = None, number: int = None) -> None:
-        # Acepta tanto hall_number como number para contentar a pytest y al mentor
+    def __init__(
+        self,
+        hall_number: int = None,
+        number: int = None
+    ) -> None:
         resolved = hall_number if hall_number is not None else number
         self.hall_number = resolved
         self.number = resolved
