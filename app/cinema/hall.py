@@ -7,10 +7,10 @@ if TYPE_CHECKING:
 
 
 class CinemaHall:
-    def __init__(self, number: int = None, hall_number: int = None) -> None:
-        resolved_number = number if number is not None else hall_number
-        self.number = resolved_number
-        self.hall_number = resolved_number
+    def __init__(self, hall_number: int = 0, number: int = 0) -> None:
+        resolved = hall_number if hall_number != 0 else number
+        self.hall_number = resolved
+        self.number = resolved
 
     def movie_session(
         self,
@@ -18,8 +18,8 @@ class CinemaHall:
         customers: list[Customer],
         cleaning_staff: Cleaner
     ) -> None:
-        print(f'"{movie_name}" started in hall number {self.number}.')
+        print(f'"{movie_name}" started in hall number {self.hall_number}.')
         for customer in customers:
             customer.watch_movie(movie_name)
         print(f'"{movie_name}" ended.')
-        cleaning_staff.clean_hall(self.number)
+        cleaning_staff.clean_hall(self.hall_number)
